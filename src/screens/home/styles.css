@@ -1,0 +1,35 @@
+.main {
+  width: 50%;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.start-btn {
+  background-color: #87cc6c;
+  border-radius: 6px;
+  padding: 0.8rem 3.5rem;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+  font-family: "Poppins", sans-serif;
+}
+
+.start-btn:hover {
+  background-color: rgba(135, 204, 108, 0.7);
+  box-shadow: 4px 4px 4px 0px #1d2c17;
+  transition: 0.4s;
+}
+
+.header-image {
+  width: 60%;
+  margin: 2rem 0;
+}
