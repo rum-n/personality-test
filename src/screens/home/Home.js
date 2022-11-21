@@ -9,7 +9,11 @@ const Home = (props) => {
       <h1 className="title">
         The only personality test you'll ever have to take!
       </h1>
-      <img className="header-image" src={HeaderImage} />
+      <img
+        className="header-image"
+        src={HeaderImage}
+        alt="Looking yourself in the mirror"
+      />
       <Link to="/test">
         <button className="start-btn">Start test</button>
       </Link>

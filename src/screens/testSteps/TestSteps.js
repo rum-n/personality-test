@@ -12,6 +12,10 @@ const TestSteps = (props) => {
     }
   };
 
+  const reload = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="main">
       <h1>Are you an introvert or an extrovert?</h1>
@@ -19,6 +23,11 @@ const TestSteps = (props) => {
       {page <= 5 && (
         <button disabled={!selected} onClick={nextPage} className="start-btn">
           {page < 5 ? "Next" : "Finish"}
+        </button>
+      )}
+      {page > 5 && (
+        <button onClick={reload} className="start-btn">
+          Retake test
         </button>
       )}
     </div>
