@@ -1,16 +1,26 @@
 import React from "react";
 import "./styles.css";
-import questions from "./questions";
+import Questions from "./../../components/questions/Questions";
 
 const TestSteps = (props) => {
-  console.log(questions);
+  const [page, setPage] = React.useState(1);
+  const [selected, setSelected] = React.useState(false);
+
+  const nextPage = () => {
+    if (page <= 5) {
+      setPage(page + 1);
+    }
+  };
 
   return (
     <div className="main">
-      <div className="question-area">
-        <h1>Question 1</h1>
-      </div>
-      <button className="start-btn">Next</button>
+      <h1>Are you an introvert or an extrovert?</h1>
+      <Questions page={page} selected={setSelected} />
+      {page <= 5 && (
+        <button disabled={!selected} onClick={nextPage} className="start-btn">
+          {page < 5 ? "Next" : "Finish"}
+        </button>
+      )}
     </div>
   );
 };
