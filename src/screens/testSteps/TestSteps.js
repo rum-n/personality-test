@@ -10,18 +10,28 @@ const TestSteps = (props) => {
     if (page <= 5) {
       setPage(page + 1);
     }
+    setSelected(false);
   };
 
   const reload = () => {
     window.location.reload();
   };
 
+  const handleSelection = (isSelected) => {
+    setSelected(isSelected);
+  };
+
   return (
-    <div className="main">
+    <div data-testid="test-steps" className="main">
       <h1>Are you an introvert or an extrovert?</h1>
-      <Questions page={page} selected={setSelected} />
+      <Questions page={page} selected={handleSelection} />
       {page <= 5 && (
-        <button disabled={!selected} onClick={nextPage} className="start-btn">
+        <button
+          data-testid="button"
+          disabled={!selected}
+          onClick={nextPage}
+          className="start-btn"
+        >
           {page < 5 ? "Next" : "Finish"}
         </button>
       )}

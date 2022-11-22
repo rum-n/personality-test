@@ -11,7 +11,6 @@ const Questions = (props) => {
   const currentQuestion = data.find((item) => item.id === page);
 
   React.useEffect(() => {
-    selected(false);
     setScore(score + tempScore);
     setClicked(null);
     setTempScore(null);
@@ -24,10 +23,13 @@ const Questions = (props) => {
   };
 
   return (
-    <div className="question-wrapper">
+    <div data-testid="question-component" className="question-wrapper">
       {page <= 5 && (
         <div>
-          <h2>Question {currentQuestion.id}</h2>
+          <h2>
+            Question{" "}
+            <span data-testid="question-number">{currentQuestion.id}</span>
+          </h2>
           <h3>{currentQuestion.question}</h3>
 
           {currentQuestion.options.map((item) => (
@@ -44,13 +46,13 @@ const Questions = (props) => {
       {page > 5 && score >= 10 && (
         <div>
           <h2>{results[1].title}</h2>
-          <p>{results[1].text}</p>
+          <p className="result-text">{results[1].text}</p>
         </div>
       )}
       {page > 5 && score < 10 && (
         <div>
           <h2>{results[0].title}</h2>
-          <p>{results[0].text}</p>
+          <p className="result-text">{results[0].text}</p>
         </div>
       )}
     </div>

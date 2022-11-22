@@ -28,3 +28,8 @@
   background-color: rgba(0, 0, 0, 0.1);
   transition: 0.4s;
 }
+
+.result-text {
+  line-height: 1.3rem;
+  text-align: justify;
+}
